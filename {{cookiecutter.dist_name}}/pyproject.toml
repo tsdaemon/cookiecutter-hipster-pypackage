@@ -36,6 +36,11 @@ addopts = "--cov={{ cookiecutter.package_name }}/ --cov-report=term-missing"
 asyncio_mode = "strict"
 {%- endif %}
 
+[tool.mypy]
+python_version = 3.11
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

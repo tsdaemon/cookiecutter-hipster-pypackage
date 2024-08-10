@@ -1,3 +1,7 @@
+# Application private data
+.env
+.data
+
 # Poetry
 .poetry_cache/
 

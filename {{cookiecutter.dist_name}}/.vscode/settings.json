@@ -1,21 +1,26 @@
 {
-    "python.analysis.typeCheckingMode": "basic",
-    "python.analysis.autoImportCompletions": true,
-    "python.terminal.activateEnvironment": true,
-    "python.terminal.activateEnvInCurrentTerminal": true,
-    "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true,
-    "editor.rulers": [88],
-    "python.defaultInterpreterPath": "${workspaceFolder}/.hatch/{{cookiecutter.dist_name}}/bin/python",
-    "python.testing.pytestPath": "${workspaceFolder}/.hatch/{{cookiecutter.dist_name}}/bin/pytest",
-    "python.testing.cwd": "${workspaceFolder}",
-    "python.testing.pytestArgs": ["--no-cov"],
-    "[python]": {
-      "editor.formatOnSave": true,
-      "editor.codeActionsOnSave": {
-        "source.fixAll": "explicit",
-        "source.organizeImports": "explicit"
-      },
-      "editor.defaultFormatter": "charliermarsh.ruff"
-    }
-  }
+  "python.terminal.activateEnvironment": true,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "editor.rulers": [120],
+  "python.testing.cwd": "${workspaceFolder}",
+  "python.testing.pytestArgs": [
+      "${workspaceFolder}/tests"
+  ],
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.testing.pytestPath": "${workspaceFolder}/.venv/bin/pytest",
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "python.envFile": "${workspaceFolder}/.env",
+  "terminal.integrated.env.linux": {
+    "POETRY_CACHE_DIR": ".poetry_cache",
+    "POETRY_VIRTUALENVS_IN_PROJECT": "true"
+  },
+}

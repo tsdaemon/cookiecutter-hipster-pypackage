@@ -1,29 +1,22 @@
 {
-	"name": "Python 3",
-	"image": "mcr.microsoft.com/devcontainers/python:0-{{cookiecutter.python_version}}",
-	"features": {
-		"ghcr.io/devcontainers-contrib/features/poetry:2": {}
-	},
-	"postCreateCommand": "pip install pre-commit && curl -sSL https://install.python-poetry.org | python3 - && poetry install",
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"ms-python.python",
-				"ms-python.vscode-pylance",
-				"charliermarsh.ruff",
-				"ms-python.poetry"
-			],
-			"settings": {
-				"python.defaultInterpreterPath": "/usr/local/bin/python",
-				"editor.formatOnSave": true,
-				"[python]": {
-					"editor.defaultFormatter": "charliermarsh.ruff",
-					"editor.codeActionsOnSave": {
-						"source.organizeImports": "explicit",
-						"source.fixAll": "explicit"
-					}
-				}
-			}
-		}
-	}
+  "name": "Python 3",
+  "image": "mcr.microsoft.com/devcontainers/python:0-{{cookiecutter.python_version}}",
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/poetry:2": {}
+  },
+  "postCreateCommand": "pip install pre-commit && curl -sSL https://install.python-poetry.org | python3 - && poetry install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        "ms-python.poetry"
+      ]
+    }
+  },
+  "containerEnv": {
+    "POETRY_CACHE_DIR": ".poetry_cache",
+    "POETRY_VIRTUALENVS_IN_PROJECT": "true"
+  }
 }
