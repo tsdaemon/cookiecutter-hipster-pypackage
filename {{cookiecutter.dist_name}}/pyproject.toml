@@ -1,58 +1,44 @@
+[tool.poetry]
+name = "{{ cookiecutter.dist_name }}"
+version = "0.0.1"
+description = "{{ cookiecutter.project_short_description }}"
+authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
+license = "{{ cookiecutter.open_source_license }}"
+readme = "README.md"
+packages = [{ include = "{{ cookiecutter.package_name }}" }]
+
+[tool.poetry.dependencies]
+python = "^{{ cookiecutter.python_version }}"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.5.0"
+mypy = "^1.11.0"
+pytest = "^8.3.0"
+
 [tool.ruff]
+line-length = 120
 target-version = "py{{ cookiecutter.python_version | replace(".", "") }}"
+exclude = [
+    ".data",
+    ".mypy_cache",
+]
 
 [tool.ruff.lint]
-extend-select = ["I", "TRY", "UP"]
+select = ["E", "F", "I", "N", "UP", "INP"]
+ignore = []
+per-file-ignores = {}
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 [tool.pytest.ini_options]
 addopts = "--cov={{ cookiecutter.package_name }}/ --cov-report=term-missing"
 {% if cookiecutter.asyncio == "Y" -%}
 asyncio_mode = "strict"
-{%- endif %}
-
-[tool.hatch]
-
-[tool.hatch.metadata]
-allow-direct-references = true
-
-[tool.hatch.version]
-source = "regex_commit"
-commit_extra_args = ["-e"]
-path = "{{ cookiecutter.package_name }}/__init__.py"
-
-[tool.hatch.envs.default]
-python = "{{ cookiecutter.python_version }}"
-dependencies = [
-    "mypy",
-    "ruff",
-    "pytest",
-    "pytest-cov",
-    "mkdocs-material",
-    "mkdocstrings[python]",
-    {% if cookiecutter.asyncio == "Y" -%}
-    "pytest-asyncio",
-    {%- endif %}
-]
-
-[tool.hatch.envs.default.scripts]
-test = "pytest"
-test-cov-xml = "pytest --cov-report=xml"
-lint = [
-  "ruff format .",
-  "ruff --fix .",
-  "mypy {{ cookiecutter.package_name }}/",
-]
-lint-check = [
-  "ruff format --check .",
-  "ruff .",
-  "mypy {{ cookiecutter.package_name }}/",
-]
-docs-serve = "mkdocs serve"
-docs-build = "mkdocs build"
+{%- endif %}-
 
 [build-system]
-requires = ["hatchling", "hatch-regex-commit"]
-build-backend = "hatchling.build"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "{{ cookiecutter.dist_name }}"

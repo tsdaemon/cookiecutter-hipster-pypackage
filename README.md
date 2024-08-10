@@ -1,16 +1,16 @@
 # Cookiecutter Hipster PyPackage
 
-Cookiecutter template for a cutting-edge Python package: Hatch, ruff, mypy, GitHub Actions and more!
+Cookiecutter template for a cutting-edge Python package: Poetry, ruff, mypy, devcontainer and more!
 
 ## Features
 
 * [X] Lightweight starter
-* [X] [Hatch](https://hatch.pypa.io/latest/install/) package management
+* [X] [Poetry](https://python-poetry.org/docs/) package management
 * [X] Linting and formatting with [`ruff`](https://github.com/charliermarsh/ruff)
 * [X] Type checking with [`mypy`](https://github.com/python/mypy)
 * [X] Unit tests with [`pytest`](https://github.com/pytest-dev/pytest) with optional asyncio setup.
 * [X] Documentation with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) and docstring reference support with [mkdocstrings](https://mkdocstrings.github.io/).
-* [X] Ready-to-use [GitHub Actions](https://help.github.com/en/actions/automating-your-workflow-with-github-actions) pipelines
+* [X] Ready-to-use [Devcontainer](https://code.visualstudio.com/docs/devcontainers/containers)
 
 ## Quickstart
 
