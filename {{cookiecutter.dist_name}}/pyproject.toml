@@ -34,7 +34,7 @@ dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 addopts = "--cov={{ cookiecutter.package_name }}/ --cov-report=term-missing"
 {% if cookiecutter.asyncio == "Y" -%}
 asyncio_mode = "strict"
-{%- endif %}-
+{%- endif %}
 
 [build-system]
 requires = ["poetry-core"]
@@ -56,5 +56,4 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "{{ cookiecutter.docs_url }}"
 Source = "{{ cookiecutter.repository_url }}"

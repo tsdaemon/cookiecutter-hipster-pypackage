@@ -20,14 +20,10 @@ Generate the project:
 cookiecutter https://github.com/frankie567/cookiecutter-hipster-pypackage
 ```
 
-The generator will automatically call `hatch env create` at the end.
+The generator will install poetry and call `poetry install` at the end. 
+It will also install `pre-commit`, init a new repository, and install pre-commit hooks.
+The generator will automatically call `poetry install` at the end. It will also install `pre-commit` and `ruff`.
 
-Then, for the GitHub Actions pipelines to work correctly, you should:
-
-* Enable the GitHub repository in Codecov.
-* Set `CODECOV_TOKEN` in your GitHub repository secrets. You can find in the Codecov settings of the corresponding project.
-* Enable GitHub Pages using the GitHub Actions source.
-* Configure the [Trusted Publisher method on PyPI](https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/): it's a modern and secure method to push your package to PyPI.
 
 ### With cruft
 

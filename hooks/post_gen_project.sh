@@ -2,6 +2,7 @@
 
 set -e
 
-pip install hatch
-
-hatch env create
+pip install poetry pre-commit
+git init .
+pre-commit install
+poetry install

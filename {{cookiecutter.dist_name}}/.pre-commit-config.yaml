@@ -30,4 +30,4 @@ repos:
   rev: v0.1.6
   hooks:
   - id: detect-missing-init
-    args: [--create, --track, --python-folders, 'tests,portreit_search']
+    args: [--create, --track, --python-folders, 'tests,{{ cookiecutter.package_name }}']
