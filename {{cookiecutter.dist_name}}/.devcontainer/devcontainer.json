@@ -4,7 +4,7 @@
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/poetry:2": {}
 	},
-	"postCreateCommand": "curl -sSL https://install.python-poetry.org | python3 - && poetry install",
+	"postCreateCommand": "pip install pre-commit && curl -sSL https://install.python-poetry.org | python3 - && poetry install",
 	"customizations": {
 		"vscode": {
 			"extensions": [
